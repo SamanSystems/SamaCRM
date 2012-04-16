@@ -3,9 +3,10 @@ How To Install SamaCrm
 1.Create a mysql database and import database.sql in to your suggested Database
 
 2.Edit /app/config/database.php On line 81 :
-  	'login' => 'user',
-		'password' => 'password',
-		'database' => 'test_database_name',
+  
+	'login' => 'user',
+	'password' => 'password',
+	'database' => 'test_database_name',
 
 3.Go to http://www.google.com/recaptcha and create a recaptcha key and edit /app/config/core.php line 229 and 230 :
 Configure::write('Recaptcha.publicKey', 'xxxxxxxx');
