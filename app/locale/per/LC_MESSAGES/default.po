@@ -1,0 +1,258 @@
+﻿
+msgid "en"
+msgstr "pe"
+
+msgid	"register" 
+msgstr 	"عضويت در سيستم"
+
+msgid "Username"
+msgstr "نام کاربری"
+
+msgid "Password"
+msgstr "کلمه عبور"
+
+msgid "update profile"
+msgstr "به روز رسانی"
+
+msgid "Email"
+msgstr "آدرس پست الکترونيکی"
+
+msgid "Name"
+msgstr "نام و نام خانوادگی"
+
+msgid "Phonenum"
+msgstr "تلفن تماس"
+
+msgid "Cellnum"
+msgstr "تلفن همراه"
+
+msgid "Address"
+msgstr "آدرس کامل پستی"
+
+msgid "Pbox"
+msgstr "کد پستی 10 رقمی"
+
+msgid "Company"
+msgstr "نام شرکت"
+
+msgid "logout"
+msgstr "خروج از سيستم"
+
+msgid "login"
+msgstr "ورود به سيستم"
+
+msgid "Add transaction"
+msgstr "ثبت فيش"
+
+msgid "Change Pass"
+msgstr "تغيير کلمه عبور"
+
+msgid "Buy"
+msgstr "خرید"
+
+msgid "New Password"
+msgstr "کلمه عبور جديد"
+
+msgid "Password Confirm"
+msgstr "تاييد کلمه عبور"
+
+msgid "Your information has been updated"
+msgstr "اطلاعات حساب شما به روز گرديد!"
+
+msgid "Tdate"
+msgstr "تاريخ واريز"
+
+msgid "Amount"
+msgstr "مقدار واريزی ( تومان )"
+
+msgid "Payment"
+msgstr "روش پرداخت"
+
+msgid "Credit"
+msgstr "اعتبار (تومان)"
+
+msgid "Transaction saved successfully!"
+msgstr "تراکنش با موفقيت ثبت گرديد!"
+
+msgid "There's an error on saving transaction"
+msgstr "مشکلی در ثبت تراکنش به وجود آمد"
+
+msgid "January"
+msgstr "فروردين"
+
+msgid "February"
+msgstr "ارديبهشت"
+
+msgid "March"
+msgstr "خرداد"
+
+msgid "April"
+msgstr "تير"
+
+msgid "May"
+msgstr "مرداد"
+
+msgid "June"
+msgstr "شهريور"
+
+msgid "July"
+msgstr "مهر"
+
+msgid "August"
+msgstr "آبان"
+
+msgid "September"
+msgstr "آذر"
+
+msgid "October"
+msgstr "دی"
+
+msgid "November"
+msgstr "بهمن"
+
+msgid "December"
+msgstr "اسفند"
+
+msgid "Domain"
+msgstr "دامنه"
+
+msgid "Ext"
+msgstr "پسوند"
+
+msgid "Whois"
+msgstr "جستجوی دامنه"
+
+msgid "Reference Number"
+msgstr "شماره ارجاع"
+
+msgid "Management Panel"
+msgstr "پنل مديريت"
+
+msgid "Service Name"
+msgstr "نام سرويس"
+
+msgid "Desc"
+msgstr "توضيحات"
+
+msgid "Monthly"
+msgstr "ماهيانه"
+
+msgid "Submit"
+msgstr "  ثــــــبــت  "
+
+msgid "Control Panel"
+msgstr "پنل مديريت"
+
+msgid "Slug"
+msgstr "نام مختصر صفحه"
+
+msgid "Cat"
+msgstr "شاخه"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Content"
+msgstr "توضيحات"
+
+msgid "Date"
+msgstr "تاريخ"
+
+msgid "List"
+msgstr "نمايش در ليست"
+
+msgid "Method Name"
+msgstr "نام روش پرداخت"
+
+msgid "Pic Address"
+msgstr "آدرس تصویر"
+
+msgid "Link Address"
+msgstr "آدرس"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Link"
+msgstr "آدرس"
+
+msgid "Sort"
+msgstr "ترتیب"
+
+msgid "Cost"
+msgstr "هزینه ماهیانه"
+
+msgid "Service"
+msgstr "نام سرویس"
+
+msgid "Phone"
+msgstr "شماره تماس"
+
+msgid "Period"
+msgstr "دوره پرداخت"
+
+msgid "send"
+msgstr "ارسال"
+
+msgid "Merchent"
+msgstr "دروازه پرداخت"
+
+msgid "Status"
+msgstr "وضعيت"
+
+msgid "Priority"
+msgstr "اهميت"
+
+msgid "Cardid"
+msgstr "شماره کارت"
+
+msgid "Cardpassword"
+msgstr "رمز کارت"
+
+msgid "Submit card"
+msgstr "ثبت کارت"
+
+msgid "Referrer Name"
+msgstr "نام معرف"
+
+msgid "Api"
+msgstr "شناسه API"
+
+msgid "Ticketdepartment"
+msgstr "دپارتمان"
+
+msgid "Add Fund"
+msgstr "افزايش اعتبار"
+
+msgid "Submit Note"
+msgstr "ثبت يادداشت"
+
+msgid "Back to admin"
+msgstr "بازگشت به مديريت"
+
+msgid "Plan Name"
+msgstr "شناسه لاتين پلان"
+
+msgid "Settings"
+msgstr "جزييات رابط"
+
+msgid "Component Name"
+msgstr "نام کامپوننت"
+
+msgid "Old Password"
+msgstr "کلمه عبور فعلی"
+
+msgid "Department"
+msgstr "دپارتمان"
+
+msgid "Nic Handle"
+msgstr "نام کاربری رابط NIC"
+
+msgid "Deposit Code"
+msgstr "کد رمز سپرده"
+
+msgid "Captcha"
+msgstr "کد امنيتی"
+
+msgid "Flag User"
+msgstr "ارجاع به"

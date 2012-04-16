@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="com.logicboxes.foundation.sfnb.order.DomContactExt" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="com.logicboxes.foundation.sfnb.order.DomContactExt" xmlns:intf="com.logicboxes.foundation.sfnb.order.DomContactExt" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="Map">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item">
+      <complexType>
+       <all>
+        <element name="key" type="xsd:anyType"/>
+        <element name="value" type="xsd:anyType"/>
+       </all>
+      </complexType>
+     </element>
+    </sequence>
+   </complexType>
+   <element name="Map" nillable="true" type="apachesoap:Map"/>
+  </schema>
+  <schema targetNamespace="com.logicboxes.foundation.sfnb.order.DomContactExt" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_int">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:int[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <element name="ArrayOf_xsd_int" nillable="true" type="impl:ArrayOf_xsd_int"/>
+   <complexType name="ArrayOf_xsd_string">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <element name="ArrayOf_xsd_string" nillable="true" type="impl:ArrayOf_xsd_string"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="isValidContactResponse">
+
+      <wsdl:part name="isValidContactReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="isValidContactRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="contactIdArr" type="impl:ArrayOf_xsd_int"/>
+
+      <wsdl:part name="eligibilityCriteriaArr" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="isValidRegistrantContactResponse">
+
+      <wsdl:part name="isValidRegistrantContactReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setContactDetailsResponse">
+
+      <wsdl:part name="setContactDetailsReturn" type="xsd:boolean"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="isValidRegistrantContactRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="contactIdArr" type="impl:ArrayOf_xsd_int"/>
+
+      <wsdl:part name="productKeys" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setContactDetailsRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="contactId" type="xsd:int"/>
+
+      <wsdl:part name="contactDetailsHash" type="apachesoap:Map"/>
+
+      <wsdl:part name="productKey" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DomContactExt">
+
+      <wsdl:operation name="setContactDetails" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID contactId contactDetailsHash productKey">
+
+         <wsdl:input message="impl:setContactDetailsRequest" name="setContactDetailsRequest"/>
+
+         <wsdl:output message="impl:setContactDetailsResponse" name="setContactDetailsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isValidRegistrantContact" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID contactIdArr productKeys">
+
+         <wsdl:input message="impl:isValidRegistrantContactRequest" name="isValidRegistrantContactRequest"/>
+
+         <wsdl:output message="impl:isValidRegistrantContactResponse" name="isValidRegistrantContactResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isValidContact" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID contactIdArr eligibilityCriteriaArr">
+
+         <wsdl:input message="impl:isValidContactRequest" name="isValidContactRequest"/>
+
+         <wsdl:output message="impl:isValidContactResponse" name="isValidContactResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DomContactExtServiceSoapBinding" type="impl:DomContactExt">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="setContactDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setContactDetailsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.DomContactExt" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setContactDetailsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.DomContactExt" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isValidRegistrantContact">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isValidRegistrantContactRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.DomContactExt" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isValidRegistrantContactResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.DomContactExt" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isValidContact">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isValidContactRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.DomContactExt" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isValidContactResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.DomContactExt" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DomContactExtService">
+
+      <wsdl:port binding="impl:DomContactExtServiceSoapBinding" name="DomContactExtService">
+
+         <wsdlsoap:address location="http://demo.myorderbox.com/anacreon/servlet/APIv3"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

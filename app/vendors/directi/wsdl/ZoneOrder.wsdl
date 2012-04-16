@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" xmlns:intf="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="Map">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item">
+      <complexType>
+       <all>
+        <element name="key" type="xsd:anyType"/>
+        <element name="value" type="xsd:anyType"/>
+       </all>
+      </complexType>
+     </element>
+    </sequence>
+   </complexType>
+   <element name="Map" nillable="true" type="apachesoap:Map"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="Vector" nillable="true" type="apachesoap:Vector"/>
+  </schema>
+  <schema targetNamespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_int">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:int[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <element name="ArrayOf_xsd_int" nillable="true" type="impl:ArrayOf_xsd_int"/>
+   <complexType name="ArrayOf_xsd_string">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <element name="ArrayOf_xsd_string" nillable="true" type="impl:ArrayOf_xsd_string"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="listRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="orderId" type="impl:ArrayOf_xsd_int"/>
+
+      <wsdl:part name="resellerId" type="impl:ArrayOf_xsd_int"/>
+
+      <wsdl:part name="customerId" type="impl:ArrayOf_xsd_int"/>
+
+      <wsdl:part name="showChildOrders" type="xsd:boolean"/>
+
+      <wsdl:part name="currentStatus" type="impl:ArrayOf_xsd_string"/>
+
+      <wsdl:part name="description" type="xsd:string"/>
+
+      <wsdl:part name="recordtype" type="xsd:string"/>
+
+      <wsdl:part name="source" type="xsd:string"/>
+
+      <wsdl:part name="destination" type="xsd:string"/>
+
+      <wsdl:part name="creationDTRangStart" type="xsd:string"/>
+
+      <wsdl:part name="creationDTRangEnd" type="xsd:string"/>
+
+      <wsdl:part name="endTimeRangStart" type="xsd:string"/>
+
+      <wsdl:part name="endTimeRangEnd" type="xsd:string"/>
+
+      <wsdl:part name="numOfRecordPerPage" type="xsd:int"/>
+
+      <wsdl:part name="pageNum" type="xsd:int"/>
+
+      <wsdl:part name="orderBy" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="domainHash" type="apachesoap:Map"/>
+
+      <wsdl:part name="customerId" type="xsd:int"/>
+
+      <wsdl:part name="invoiceOption" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setupDNSServiceResponse">
+
+      <wsdl:part name="setupDNSServiceReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="delRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="entityId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getOrderIdByDomainRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="domainName" type="xsd:string"/>
+
+      <wsdl:part name="productkey" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="delResponse">
+
+      <wsdl:part name="delReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailsByDomainRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="domainName" type="xsd:string"/>
+
+      <wsdl:part name="option" type="apachesoap:Vector"/>
+
+      <wsdl:part name="productkey" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailsByDomainResponse">
+
+      <wsdl:part name="getDetailsByDomainReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailsRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="zoneid" type="xsd:int"/>
+
+      <wsdl:part name="options" type="apachesoap:Vector"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="modResponse">
+
+      <wsdl:part name="modReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="renewResponse">
+
+      <wsdl:part name="renewReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="listResponse">
+
+      <wsdl:part name="listReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="renewRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="domainHash" type="apachesoap:Map"/>
+
+      <wsdl:part name="invoiceOption" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setupDNSServiceRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="orderID" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part name="addReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getOrderIdByDomainResponse">
+
+      <wsdl:part name="getOrderIdByDomainReturn" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="modRequest">
+
+      <wsdl:part name="SERVICE_USERNAME" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PASSWORD" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_ROLE" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_LANGPREF" type="xsd:string"/>
+
+      <wsdl:part name="SERVICE_PARENTID" type="xsd:int"/>
+
+      <wsdl:part name="zoneid" type="xsd:int"/>
+
+      <wsdl:part name="modnoofrecords" type="xsd:int"/>
+
+      <wsdl:part name="modnoofyears" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailsResponse">
+
+      <wsdl:part name="getDetailsReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ZoneOrder">
+
+      <wsdl:operation name="renew" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID domainHash invoiceOption">
+
+         <wsdl:input message="impl:renewRequest" name="renewRequest"/>
+
+         <wsdl:output message="impl:renewResponse" name="renewResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="del" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID entityId">
+
+         <wsdl:input message="impl:delRequest" name="delRequest"/>
+
+         <wsdl:output message="impl:delResponse" name="delResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDetails" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID zoneid options">
+
+         <wsdl:input message="impl:getDetailsRequest" name="getDetailsRequest"/>
+
+         <wsdl:output message="impl:getDetailsResponse" name="getDetailsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDetailsByDomain" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID domainName option productkey">
+
+         <wsdl:input message="impl:getDetailsByDomainRequest" name="getDetailsByDomainRequest"/>
+
+         <wsdl:output message="impl:getDetailsByDomainResponse" name="getDetailsByDomainResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getOrderIdByDomain" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID domainName productkey">
+
+         <wsdl:input message="impl:getOrderIdByDomainRequest" name="getOrderIdByDomainRequest"/>
+
+         <wsdl:output message="impl:getOrderIdByDomainResponse" name="getOrderIdByDomainResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setupDNSService" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID orderID">
+
+         <wsdl:input message="impl:setupDNSServiceRequest" name="setupDNSServiceRequest"/>
+
+         <wsdl:output message="impl:setupDNSServiceResponse" name="setupDNSServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="add" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID domainHash customerId invoiceOption">
+
+         <wsdl:input message="impl:addRequest" name="addRequest"/>
+
+         <wsdl:output message="impl:addResponse" name="addResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="list" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID orderId resellerId customerId showChildOrders currentStatus description recordtype source destination creationDTRangStart creationDTRangEnd endTimeRangStart endTimeRangEnd numOfRecordPerPage pageNum orderBy">
+
+         <wsdl:input message="impl:listRequest" name="listRequest"/>
+
+         <wsdl:output message="impl:listResponse" name="listResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mod" parameterOrder="SERVICE_USERNAME SERVICE_PASSWORD SERVICE_ROLE SERVICE_LANGPREF SERVICE_PARENTID zoneid modnoofrecords modnoofyears">
+
+         <wsdl:input message="impl:modRequest" name="modRequest"/>
+
+         <wsdl:output message="impl:modResponse" name="modResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ZoneOrderServiceSoapBinding" type="impl:ZoneOrder">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="renew">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="renewRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="renewResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="del">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="delRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="delResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDetailsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDetailsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDetailsByDomain">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDetailsByDomainRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDetailsByDomainResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getOrderIdByDomain">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getOrderIdByDomainRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getOrderIdByDomainResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setupDNSService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setupDNSServiceRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setupDNSServiceResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="list">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mod">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="com.logicboxes.foundation.sfnb.order.dnsbox.Zone" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ZoneOrderService">
+
+      <wsdl:port binding="impl:ZoneOrderServiceSoapBinding" name="ZoneOrderService">
+
+         <wsdlsoap:address location="http://demo.myorderbox.com/anacreon/servlet/APIv3"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

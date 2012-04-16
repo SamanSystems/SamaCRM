@@ -1,0 +1,304 @@
+form {
+	padding: 0;
+	margin: 0;
+}
+
+#productproperty{
+	padding:5px;
+}
+
+span.chromatic-green{
+	color: #008000;
+}
+
+span.green{
+	color: #00D000;
+}
+
+span.blue{
+	color: #0000D0;
+}
+
+span.red{
+	color: #D00000;
+}
+
+span.violet{
+	color: #D000D0;
+}
+
+span.lavender{
+	color: #F000F0;
+}
+
+span.orange{
+	color: #FF6600;
+}
+
+tr.unread {
+	background: #e0e0e0;
+}
+
+.ticket-reply{
+	-moz-border-radius: 5px;
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.ticket-reply .header{	
+	background:#CCCCCC none repeat scroll 0 0;
+	margin-bottom:5px;
+	padding:5px;
+	_width:100%;
+}
+
+.ticket-reply .info{
+	float: right;
+	width: 48%
+}
+
+.ticket-reply .date{
+	float: right;
+	width: 49%;
+	text-align: left;
+}
+
+.note{
+	border: 1px solid #8BE57E;
+}
+
+.note .header {
+	background:#B4EFAB none repeat scroll 0 0;
+}
+
+td.tdgreen{
+	background: #00D000;
+}
+
+td.tdred{
+	background: #D00000;
+}
+
+.listTable {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+.listTable th {
+	background: #ccc;
+}
+
+
+.listTable th, .listTable td {
+	padding: 5px;
+	text-align: center;
+}
+
+.orderTable {
+	width: 96%;
+	border: 1px solid #ccc;
+}
+
+.orderTable th {
+	background-color: #ccc;
+}
+
+
+.orderTable th, .orderTable td {
+	padding: 5px;
+	text-align: center;
+}
+
+div.paginate {
+	text-align: center;
+	padding: 10px;
+}
+
+div.paginate div {
+	display: inline-block;
+}
+
+.paginate div, .paginate a {
+	margin-left:10px;
+	background-color:#EFEFEF;
+	border:1px solid #C0C0C0;
+	display:inline-block;
+	padding:4px;
+}
+
+.paginate div.disabled {
+	color:#BFBFBF;
+}
+
+.paginate a{
+	color:#9F9F9F; 
+	font-weight: 900;
+}
+
+span#loading {
+	display: block;
+	width: 43px;
+	height: 11px;
+	background: url('loading.gif') transparent no-repeat scroll center center;
+	vertical-align: middle;
+	margin: 4px auto;
+}
+
+#UserExt,#UserDomain{
+	direction: ltr;
+}
+
+#editor{
+	direction: ltr;
+	height: 350px;
+}
+
+.invoice {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right: 1px solid #C0C0C0;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom: 1px solid #C0C0C0;
+	width: 650px;
+	border-collapse: collapse;
+	border-color: black;
+}
+
+.invoice td {
+	text-align: center;
+	font: 12px Tahoma;
+	padding: 3px;
+}
+
+#flashMessage,#authMessage{
+	min-height: 24px;
+	_height:24px;
+	padding:5px 30px 0px 10px;
+	margin:10px 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+div.success-msg{
+	border:1px solid #8be57e;
+	color:#337129;
+	background:#b4efab url('images/succes.png') no-repeat scroll 99% 5px;
+}
+
+div.error-msg, div.message{
+	border:1px solid #fe9090;
+	background:#feb1b1 url('images/error.png') no-repeat scroll 99% 5px;
+	color:#820101;
+}
+
+div.dialog-msg{
+	border:1px solid #ccc;
+	background:#f3f3f3 url('images/light-bulb-off.png') no-repeat scroll 99% 5px;
+	color:#666;
+}
+
+div.warning-msg{
+	border:1px solid #d5d458;
+	background:#f0feb1 url('images/warning.png') no-repeat scroll 99% 5px;
+	color:#7f7200;
+}
+
+div.info-msg{
+	border:1px solid #6ab3ff;
+	background:#a3d0ff url('images/information.png') no-repeat scroll 99% 5px;
+	color:#004185;
+}
+
+.error-msg a, .success-msg a{
+	text-decoration: none;
+	color: #585858;
+}
+.error-msg a:hover, .success-msg a:hover {
+	color: #FFFFFF;
+}
+
+.domain-msg{
+	background: #FFE900 none repeat scroll 0 0;
+	border: 2px solid #FFD100;
+}
+
+.domain-msg span{
+	color:#FF7200;
+	font-weight: bold;
+}
+
+.input-eng, #ProductPlanName {
+	direction: ltr;
+}
+
+label {
+	border-right:2px solid #999999;
+	display:inline-block;
+	margin:0 0 4px 5px;
+	padding:4px;
+	text-align:right;
+	vertical-align:middle;
+	width: 130px;
+}
+
+input, button, textarea, select {
+	background-color:#EFEFEF;
+	border:1px solid #C0C0C0;
+	font:11px tahoma;
+	padding:3px;
+	vertical-align:middle;
+}
+
+.clear{
+	clear: both;
+}
+
+a.button {
+	font: normal 11px tahoma;
+	padding: 5px;
+	vertical-align: middle;
+	display: inline-block;
+	border: 1px solid #C0C0C0;
+	background-color:#E0E0E0;
+	margin-left:3px;
+	margin-bottom: 3px;
+}
+
+img{
+	border: 0px;
+	vertical-align: middle;
+}
+
+ul.admin-lists {
+	list-style: none;
+	direction: rtl;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.admin-lists li {
+	float: right;
+	background: #FFF;
+	border: 2px solid #e0e0e0;
+	margin: 0px 2px 10px 2px;
+	padding: 10px 5px 10px 5px;
+	width: 155px;
+	min-height: 165px;
+	max-height: 200px;
+	_height: 144px;
+}
+
+#TicketContent, #MessageContent, #OrderPublicNote{
+	width: 370px;
+	height: 170px;
+}
+
+div#recaptcha_widget_div{
+	direction: ltr;
+}
+
+div.recaptcha{
+	width: 400px;
+}
