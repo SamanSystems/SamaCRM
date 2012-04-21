@@ -4,7 +4,7 @@ class UsersController extends AppController
 {
 	//--- Variables
 	var $uses = array('User', 'Order', 'Service', 'Product', 'Transaction', 'Payment', 'Setting', 'Ticket', 'Ticketreply', 'Cardcharge', 'Ticketdepartment', 'Api', 'Message');
-	var $components = array('Security', 'Whois', 'Jtime', 'Email', 'Cookie', 'Directiapi', 'Pasargad', 'Cpanelapi', 'Nicchargeapi', 'Redresellerapi', 'Zarinpal', 'Asresms', 'RequestHandler');
+	var $components = array('Security', 'Whois', 'Jtime', 'Email', 'Cookie', 'Directiapi', 'Pasargad', 'Redresellerapi', 'Zarinpal', 'Asresms', 'RequestHandler');
 	var $helpers = array('Html', 'Form', 'Session', 'Javascript', 'Paginator', 'Qoute');
 	var $paginate = array('limit' => 15);
 	var $setting;
