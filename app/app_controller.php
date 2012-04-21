@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class AppController extends Controller{
 	var $view = 'Theme';
@@ -23,29 +23,6 @@ class AppController extends Controller{
 	function blockqoute($input)
 	{
 		return nl2br(str_replace(array('{کد}', '{/کد}'), array('<blockquote style="text-align:left; direction:ltr;"><div>', '</div></blockquote>'), $input));
-	}
-	
-	function get_domain ($domainb)
-	{
-		$bits = explode('/', $domainb);
-		if ($bits[0]=='http:' || $bits[0]=='https:'){
-			$domainb= $bits[2];
-		} else {
-			$domainb= $bits[0];
-		}
-		unset($bits);
-		$bits = explode('.', $domainb);
-		$idz=count($bits);
-		$idz-=3;
-		if (strlen($bits[($idz+2)])==0) {
-			$url=$bits[($idz)].'.'.$bits[($idz+1)];
-		} else {
-			$url=$bits[($idz+1)].'.'.$bits[($idz+2)];
-		}
-		if(strlen($bits[($idz+1)]) == 2 && strlen($bits[($idz+2)]) == 2)
-			$url = $bits[($idz)].'.'.$url;
-		
-		return $url;
 	}
 	
 	function SendSMS(){

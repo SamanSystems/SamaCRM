@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class ZarinpalComponent extends Object 
 {
 	private $site;

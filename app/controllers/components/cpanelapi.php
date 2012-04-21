@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::Import('Vendor','cpanel/xmlapi');
 
 
